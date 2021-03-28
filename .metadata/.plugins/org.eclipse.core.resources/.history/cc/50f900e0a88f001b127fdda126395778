@@ -1,0 +1,26 @@
+package com.example.board.restcontroller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.board.service.BoardService;
+import com.example.board.vo.Board;
+
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@Slf4j
+public class BoardRestController {
+	@Autowired BoardService boardService;
+	
+	@GetMapping(value= {"/board/index"})
+	public List<Board> boardList(
+			@RequestParam(value="test", required = false) String test){
+		log.info("{}", "####################" + test);
+		return boardService.getBoard();
+	}
+}

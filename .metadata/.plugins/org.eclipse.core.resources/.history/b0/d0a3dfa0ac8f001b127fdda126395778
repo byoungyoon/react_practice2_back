@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.board.mapper.BoardMapper">
+	<select id="selectBoard" resultType="com.example.board.vo.Board">
+		SELECT 
+			board_no boardNo,
+			board_title boardTitle,
+			user_id userId,
+			board_count boardCount,
+			create_date createDate
+		FROM first.board
+		LIMIT #{currentPage} OFFSET #{limitPage}
+	</select>
+</mapper>
