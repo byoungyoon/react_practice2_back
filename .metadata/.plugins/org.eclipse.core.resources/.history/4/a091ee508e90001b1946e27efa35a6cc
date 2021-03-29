@@ -16,10 +16,6 @@ import com.example.board.vo.Board;
 public class BoardService {
 	@Autowired BoardMapper boardMapper;
 	
-	public void addBoard(Board board) {
-		boardMapper.insertBoard(board);
-	}
-	
 	public Map<String, Object> getBoard(int limitPage){
 		int lastPage = boardMapper.selectBoardByCount();
 		if(lastPage % limitPage == 0) {

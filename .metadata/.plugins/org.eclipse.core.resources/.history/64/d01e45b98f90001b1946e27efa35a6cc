@@ -18,6 +18,6 @@
 			board_count boardCount,
 			create_date createDate
 		FROM first.board
-		ORDER BY board_no 
+		ORDER BY board_no DESC
 	</select>
 </mapper>
