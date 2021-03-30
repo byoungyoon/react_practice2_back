@@ -16,10 +16,6 @@ import com.example.board.vo.Board;
 public class BoardService {
 	@Autowired BoardMapper boardMapper;
 	
-	public void removeBoard(int boardNo) {
-		boardMapper.deleteBoard(boardNo);
-	}
-	
 	public void addBoard(Board board) {
 		boardMapper.insertBoard(board);
 	}

@@ -18,13 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 public class BoardRestController {
 	@Autowired BoardService boardService;
 	
-	@GetMapping("/board/removeBoard/{boardNo}")
-	public String removeBoard(
-			@PathVariable(value="boardNo", required = false) int boardNo) {
-		boardService.removeBoard(boardNo);
-		return "";
-	}
-	
 	@PostMapping("/board/addBoard")
 	public String addBoard(Board board) {
 		boardService.addBoard(board);
